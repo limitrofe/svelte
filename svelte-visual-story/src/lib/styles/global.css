@@ -1,0 +1,96 @@
+:root {
+    /* Cores da marca */
+    --cor-preta: #232323;
+    --cor-vermelha: #c4170c;
+    --cor-vermelha-clara: #e0301d;
+    --cor-vermelha-escura: #961207;
+    --cor-branca: #ffffff;
+  
+    /* Tipografia */
+    --fonte-primaria: 'Globotipo', sans-serif;
+  }
+
+
+  
+
+@font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-th.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-th-lt.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-lt.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-lt-lt.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-rg.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-rg-lt.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-bd-lt.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-bk.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Globotipo';
+    src: url('/fonts/globo-bk-lt.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  body {
+    font-family: var(--fonte-primaria);
+    background-color: var(--cor-branca);
+    color: var(--cor-preta);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  .scrolly-wrapper {
+    position: relative;
+    padding-top: 100vh;
+    padding-bottom: 100vh;
+  }
+  
+  
