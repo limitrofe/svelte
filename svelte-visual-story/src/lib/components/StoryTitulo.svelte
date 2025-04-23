@@ -21,7 +21,6 @@
   export let lineHeightLinhaFinaDesktop = "1.3";
   export let lineHeightLinhaFinaMobile = "1.2";
   export let margemLinhaFina = "0.75rem";
-  
 
   // Linha decorativa (gráfica)
   export let exibirLinha = true;
@@ -31,13 +30,17 @@
   export let margemLinha = "0.75rem";
 
   // Alinhamento
-  export let alinhamento = "left";    // opções: left | center | right
-  export let vertical = "top";        // opções: top | center | bottom
+  export let alinhamento = "left"; // opções: left | center | right
+  export let vertical = "top";     // opções: top | center | bottom
+
+  // Novo: Cor de fundo
+  export let fundo = "transparent";
 </script>
 
 <div
   class="story-titulo"
   style="
+    background-color: {fundo};
     --largura-desktop: {largura};
     --tamanho-desktop: {tamanhoDesktop};
     --tamanho-mobile: {tamanhoMobile};

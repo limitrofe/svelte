@@ -1,14 +1,20 @@
 <script>
+    import Section from '$lib/components/Section.svelte';
+
     import BirdFlight from '$lib/components/BirdFlight.svelte';
     import StoryTitulo from '$lib/components/StoryTitulo.svelte';
     import TextoLongo from '$lib/components/TextoLongo.svelte';
     import BlocoAnimado from '$lib/components/BlocoAnimado.svelte';
     import TextoNumerado from '$lib/components/TextoNumerado.svelte';
-    import Thread from '$lib/components/Thread.svelte';
     import HeroHeader from '$lib/components/HeroHeader.svelte';
     import GloboPlayer from '$lib/components/GloboPlayer.svelte';
     import ImagemFull from '$lib/components/ImagemFull.svelte';
+    import GaleriaExpandivel from '$lib/components/GaleriaExpandivel.svelte';
+    import Creditos from '$lib/components/Creditos.svelte';
 
+const imagens = [
+  'img/ft1.png', 'img/ft2.png', 'img/ft3.png', 'img/ft4.png', 'img/ft5.png'
+];
   // Exemplo opcional de GA4
   const ga4 = {
     user_id: '1234567890',
@@ -93,7 +99,7 @@ pontosDesk={[
   { x: 2000, y: 0 },
   { x: 3000, y: 0 },
   { x: 4000, y: 0 },
-  { x: 5000, y: 0 }
+  { x: 5300, y: 0 }
 ]}
 pontosMob={[
   { x: 0, y: 0 },
@@ -109,7 +115,11 @@ pontosMob={[
   { x: 3000, y: 0 },
   { x: 3300, y: 0 },
   { x: 3600, y: 0 },
-  { x: 3940, y: 0 }
+  { x: 3940, y: 0 },
+  { x: 4200, y: 0 },
+  { x: 4540, y: 0 },
+  { x: 4900, y: 0 },
+  { x: 5240, y: 0 }
 ]}
 />
 
@@ -119,151 +129,348 @@ pontosMob={[
   srcMob="img/continua.jpg"
 />
 
+<Section fundo="#25604b" padding="6rem 0">
+  <StoryTitulo
+    texto="AMBIENTES DA TRAMA"
+    linhaFina=""
+    largura="40%"
+    alinhamento="center"
+    vertical="top"
+    cor="#ffe0bb"
+    peso="100"
+    tamanhoDesktop="4rem"
+    tamanhoMobile="3rem"
+    lineHeightDesktop="1.1"
+    lineHeightMobile="1.05"
+    corLinhaFina="#ffe0bb"
+    tamanhoLinhaFinaDesktop="1.2rem"
+    tamanhoLinhaFinaMobile="1.6rem"
+    lineHeightLinhaFinaDesktop="2"
+    lineHeightLinhaFinaMobile="1.3"
+    exibirLinha={true}
+    corLinha="#ffe0bb"
+    larguraLinha="100px"
+    alturaLinha="3px"
+  />
+    <TextoLongo
+    texto="<p>Clique nas fotos para ampliar</p>"
+    largura="70%"
+    cor="#ffe0bb"
+    alinhamento="center"
+    tamanhoFonte="1.2rem"
+    entrelinha="1.9"
+    animar={true}
+  />   
+
+  <GaleriaExpandivel {imagens} />
 
 
+</Section>
 
+<ImagemFull
+  srcDesk="img/curiosidades.jpg"
+  srcMob="img/curiosidades.jpg"
+/>
 
-  <TextoLongo
-  texto="<p>O componente TextoLongo serve para contar a história, e nele vc vai aplicando os textos entre as tags P conforem as suas necessidades. </p><p>Você pode controlar a largura da caixa de texto se vai ser 60% ou mais ou menos de acordo com a sua necessidade, definir o alinhamento se é esquerda, direita ou centro e se vai ser animado ou não usando False ou True.</p>"
-  largura="70%"
-  alinhamento="left"
-  tamanhoFonte="1.2rem"
-  entrelinha="1.9"
-  animar={true}
-/> 
+<Section fundo="#ffe0bb" padding="6rem 0">
+  <StoryTitulo
+    texto="CURIOSIDADES"
+    linhaFina=""
+    largura="40%"
+    alinhamento="center"
+    vertical="top"
+    cor="#d64d50"
+    peso="100"
+    tamanhoDesktop="4rem"
+    tamanhoMobile="3rem"
+    lineHeightDesktop="1.1"
+    lineHeightMobile="1.05"
+    corLinhaFina="#d64d50"
+    tamanhoLinhaFinaDesktop="1.2rem"
+    tamanhoLinhaFinaMobile="1.6rem"
+    lineHeightLinhaFinaDesktop="2"
+    lineHeightLinhaFinaMobile="1.3"
+    exibirLinha={true}
+    corLinha="#d64d50"
+    larguraLinha="100px"
+    alturaLinha="3px"
+  />
+   
 
-<BlocoAnimado
-  alturaDesk="500px"
-  alturaMob="50px"
-  start="top 10%"
+  <BlocoAnimado
+  alturaDesk="400px"
+  alturaMob="300px"
+  start="top 50%"
   animacao={{
     desk: {
-      from: { scale: 0.1, opacity: 1, rotate: 0, y: 0, x: -1500 },
-      to: { scale: 3, opacity: 1, rotate: 0, y: 0, x: 400, duration: 0.5, ease: 'expoScale(0.5,7,none)' }
+      from: { scale: 0.1, opacity: 1, rotate: 0, y: 0, x: 215 },
+      to: { scale: 3, opacity: 1, rotate: 0, y: 0, x: 0, duration: 0.5, ease: 'expoScale(0.5,7,none)' }
     },
     mob: {
       from: { opacity: 0, rotate: 0, y: 0, x: -500, scale: 0.3 },
-      to: { opacity: 1, rotate: 0, scale: 0.3, y: 0, x: 50, duration: 1, ease: 'expoScale(0.5,7,none)' }
+      to: { opacity: 1, rotate: 0, scale: 4, y: 0, x: 200, duration: 1, ease: 'expoScale(0.5,7,none)' }
     }
   }}
 >
-  <img src="https://s3.glbimg.com/v1/AUTH_8b29beb0cbe247a296f902be2fe084b6/2025/html/0estudos/svelte/templates/img/bala_1.gif" alt="Imagem animada" style="width: 100%; height: auto;" />
+  <img src="img/protagonista.png" alt="Imagem animada" style="width: 30%; height: auto;" />
 </BlocoAnimado>
 
 
 <TextoNumerado
-  numero="1 mi"
-  texto="balas por diabalas por diabalas por diabalas por diabalas por diabalas por diabalas por dia"
+  numero="PROTAGONISTA"
+  texto="Dona de Mim marca a primeira protagonista de Clara Moneke. A atriz de 26 anos estreou na Globo em outra trama de Rosane Svartman, o sucesso Vai na Fé, como Kate, e foi Caridade em No Rancho Fundo, dirigida por Allan Fiterman."
   alinhamento="right"
   alinhamentoTexto="left"
-  tamanhoNumeroDesk="8rem"
-  tamanhoTextoDesk="2rem"
-  tamanhoNumeroMob="3rem"
-  tamanhoTextoMob="1.2rem"
+  tamanhoNumeroDesk="2rem"
+  tamanhoTextoDesk="1.1rem"
+  tamanhoNumeroMob="1rem"
+  tamanhoTextoMob="0.9rem"
   animacao={{
     desk: {
       from: { x: 215, y: 0, scale: 1, opacity: 0 },
       to: { x: 0, y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power3.out' }
     },
     mob: {
-      from: { x: 100, y: 0, opacity: 0 },
-      to: { x: 160, y: 0, opacity: 1, duration: 1 }
+      from: { x: 0, y: 0, opacity: 0 },
+      to: { x: 60, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
     }
   }}
 /> 
 
+  <BlocoAnimado
+  alturaDesk="400px"
+  alturaMob="300px"
+  start="top 50%"
+  animacao={{
+    desk: {
+      from: { scale: 0.1, opacity: 1, rotate: 0, y: 0, x: -300 },
+      to: { scale: 3, opacity: 1, rotate: 0, y: 0, x: 300, duration: 0.5, ease: 'expoScale(0.5,7,none)' }
+    },
+    mob: {
+      from: { opacity: 0, rotate: 0, y: 0, x: 500, scale: 0.3 },
+      to: { opacity: 1, rotate: 0, scale: 4, y: 0, x: 0, duration: 1, ease: 'expoScale(0.5,7,none)' }
+    }
+  }}
+>
+  <img src="img/retornos.png" alt="Imagem animada" style="width: 30%; height: auto;" />
+</BlocoAnimado>
 
-<TextoLongo
-texto="<p>Dados do Censo 2022 divulgados nesta quinta-feira (17) mostram que 19% dos brasileiros vivem em vias com calçadas livres, e 15%, com acesso a cadeirantes. Um em cada três não têm nenhuma árvore no entorno de casa, e mais da metade das cidades não tem vias para ciclistas.  </p><p>Os dados levam em conta os 86% da população brasileira, ou 174 milhões de pessoas, que vivem em cidades e áreas urbanizadas, mesmo que na zona rural. </p>"
-largura="60%"
-alinhamento="left"
-animar={true}
+
+<TextoNumerado
+  numero="RETORNOS"
+  texto="Dona de Mim marca a volta de Cláudia Abreu às novelas depois de nove anos, quando fez A Lei do Amor, de 2016. Como ela, Marcos Pasquim também volta a Globo. A última novela do ator havia sido O Tempo Não Pára, em 2018."
+  alinhamento="right"
+  alinhamentoTexto="left"
+  tamanhoNumeroDesk="2rem"
+  tamanhoTextoDesk="1.1rem"
+  tamanhoNumeroMob="1rem"
+  tamanhoTextoMob="0.9rem"
+  animacao={{
+    desk: {
+      from: { x: 0, y: 0, scale: 1, opacity: 0 },
+      to: { x: 300, y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power3.out' }
+    },
+    mob: {
+      from: { x: 0, y: 0, opacity: 0 },
+      to: { x: 60, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    }
+  }}
+/> 
+  <BlocoAnimado
+  alturaDesk="200px"
+  alturaMob="150px"
+  start="top 50%"
+  animacao={{
+    desk: {
+      from: { scale: 0.1, opacity: 1, rotate: 0, y: 0, x: 215 },
+      to: { scale: 3, opacity: 1, rotate: 0, y: 0, x: 0, duration: 0.5, ease: 'expoScale(0.5,7,none)' }
+    },
+    mob: {
+      from: { opacity: 0, rotate: 0, y: 0, x: -500, scale: 0.3 },
+      to: { opacity: 1, rotate: 0, scale: 4, y: 0, x: 200, duration: 1, ease: 'expoScale(0.5,7,none)' }
+    }
+  }}
+>
+  <img src="img/referencias.png" alt="Imagem animada" style="width: 30%; height: auto;" />
+</BlocoAnimado>
+
+
+<TextoNumerado
+  numero="REFERÊNCIAS"
+  texto="Dona de Mim faz referências a diversas novelas da Globo, principalmente às também escritas por Rosane Svartman. E até atores de Vai na Fé vão voltar com os mesmos personagens!"
+  alinhamento="right"
+  alinhamentoTexto="left"
+  tamanhoNumeroDesk="2rem"
+  tamanhoTextoDesk="1.1rem"
+  tamanhoNumeroMob="1rem"
+  tamanhoTextoMob="0.9rem"
+  animacao={{
+    desk: {
+      from: { x: 215, y: 0, scale: 1, opacity: 0 },
+      to: { x: 0, y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power3.out' }
+    },
+    mob: {
+      from: { x: 0, y: 0, opacity: 0 },
+      to: { x: 60, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    }
+  }}
 /> 
 
-<Thread tweets={[
-  {
-    autor: "G1",
-    usuario: "@g1",
-    avatar: "/g1.png",
-    verificado: true,
-    texto: "🚨 O Brasil tem 1,7 milhão de ruas. Só 38% têm calçada, diz IBGE.",
-    imagem: "/censo1.jpg",
-    data: "10:32 · 17 de abr de 2025",
-    respostas: 320,
-    reposts: 1.200,
-    curtidas: 3.900,
-    views: "285 mil"
-  },
-  {
-    autor: "G1",
-    usuario: "@g1",
-    avatar: "/g1.png",
-    verificado: true,
-    texto: "🧵 Veja os dados por tipo de pavimentação, iluminação e localização urbana.",
-    imagem: "/censo2.jpg",
-    data: "10:33 · 17 de abr de 2025",
-    respostas: 110,
-    reposts: 800,
-    curtidas: 2.300,
-    views: "193 mil"
-  }
-]} />
+  <BlocoAnimado
+  alturaDesk="400px"
+  alturaMob="300px"
+  start="top 50%"
+  animacao={{
+    desk: {
+      from: { scale: 0.1, opacity: 1, rotate: 0, y: 0, x: -300 },
+      to: { scale: 3, opacity: 1, rotate: 0, y: 0, x: 300, duration: 0.5, ease: 'expoScale(0.5,7,none)' }
+    },
+    mob: {
+      from: { opacity: 0, rotate: 0, y: 0, x: 500, scale: 0.3 },
+      to: { opacity: 1, rotate: 0, scale: 4, y: 0, x: 0, duration: 1, ease: 'expoScale(0.5,7,none)' }
+    }
+  }}
+>
+  <img src="img/estreia.png" alt="Imagem animada" style="width: 30%; height: auto;" />
+</BlocoAnimado>
 
 
+<TextoNumerado
+  numero="ESTREIA DE PESO"
+  texto="Ao mesmo tempo em que conta com veteranos consagrados, como Tony Ramos, Dona de Mim marcará a estreia de novatos. Astro do rap nacional, L7nnon será Ryan, em sua primeira novela. Na trama ele participa de batalhas de rimas."
+  alinhamento="right"
+  alinhamentoTexto="left"
+  tamanhoNumeroDesk="2rem"
+  tamanhoTextoDesk="1.1rem"
+  tamanhoNumeroMob="1rem"
+  tamanhoTextoMob="0.9rem"
+  animacao={{
+    desk: {
+      from: { x: 0, y: 0, scale: 1, opacity: 0 },
+      to: { x: 300, y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power3.out' }
+    },
+    mob: {
+      from: { x: 0, y: 0, opacity: 0 },
+      to: { x: 60, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    }
+  }}
+/> 
+  <BlocoAnimado
+  alturaDesk="300px"
+  alturaMob="150px"
+  start="top 50%"
+  animacao={{
+    desk: {
+      from: { scale: 0.1, opacity: 1, rotate: 0, y: 0, x: 215 },
+      to: { scale: 3, opacity: 1, rotate: 0, y: 0, x: 0, duration: 0.5, ease: 'expoScale(0.5,7,none)' }
+    },
+    mob: {
+      from: { opacity: 0, rotate: 0, y: 0, x: -500, scale: 0.3 },
+      to: { opacity: 1, rotate: 0, scale: 4, y: 0, x: 200, duration: 1, ease: 'expoScale(0.5,7,none)' }
+    }
+  }}
+>
+  <img src="img/assuntos.png" alt="Imagem animada" style="width: 30%; height: auto;" />
+</BlocoAnimado>
 
 
-
-<TextoLongo
-texto="<p>Dados do Censo 2022 divulgados nesta quinta-feira (17) mostram que 19% dos brasileiros vivem em vias com calçadas livres, e 15%, com acesso a cadeirantes. Um em cada três não têm nenhuma árvore no entorno de casa, e mais da metade das cidades não tem vias para ciclistas.  </p><p>Os dados levam em conta os 86% da população brasileira, ou 174 milhões de pessoas, que vivem em cidades e áreas urbanizadas, mesmo que na zona rural. </p>"
-largura="60%"
-alinhamento="left"
-animar={true}
+<TextoNumerado
+  numero="ASSUNTOS DIVERSOS"
+  texto="Dona de Mim fala sobre traumas, maternidade, amor, família, traição, envelhecimento, kickboxing, periferia, música, polícia, superação. Ufa! Entre muitos outros."
+  alinhamento="right"
+  alinhamentoTexto="left"
+  tamanhoNumeroDesk="2rem"
+  tamanhoTextoDesk="1.1rem"
+  tamanhoNumeroMob="1rem"
+  tamanhoTextoMob="0.9rem"
+  animacao={{
+    desk: {
+      from: { x: 215, y: 0, scale: 1, opacity: 0 },
+      to: { x: 0, y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power3.out' }
+    },
+    mob: {
+      from: { x: 0, y: 0, opacity: 0 },
+      to: { x: 60, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    }
+  }}
 /> 
 
-<Thread tweets={[
-  {
-    autor: "G1",
-    usuario: "@g1",
-    avatar: "/g1.png",
-    verificado: true,
-    texto: "🚨 O Brasil tem 1,7 milhão de ruas. Só 38% têm calçada, diz IBGE.",
-    imagem: "/censo1.jpg",
-    data: "10:32 · 17 de abr de 2025",
-    respostas: 320,
-    reposts: 1.200,
-    curtidas: 3.900,
-    views: "285 mil"
-  },
-  {
-    autor: "G1",
-    usuario: "@g1",
-    avatar: "/g1.png",
-    verificado: true,
-    texto: "🧵 Veja os dados por tipo de pavimentação, iluminação e localização urbana.",
-    imagem: "/censo2.jpg",
-    data: "10:33 · 17 de abr de 2025",
-    respostas: 110,
-    reposts: 800,
-    curtidas: 2.300,
-    views: "193 mil"
-  }
-]} />
+  <BlocoAnimado
+  alturaDesk="400px"
+  alturaMob="300px"
+  start="top 50%"
+  animacao={{
+    desk: {
+      from: { scale: 0.1, opacity: 1, rotate: 0, y: 0, x: -300 },
+      to: { scale: 3, opacity: 1, rotate: 0, y: 0, x: 300, duration: 0.5, ease: 'expoScale(0.5,7,none)' }
+    },
+    mob: {
+      from: { opacity: 0, rotate: 0, y: 0, x: 500, scale: 0.3 },
+      to: { opacity: 1, rotate: 0, scale: 4, y: 0, x: 0, duration: 1, ease: 'expoScale(0.5,7,none)' }
+    }
+  }}
+>
+  <img src="img/mansao.png" alt="Imagem animada" style="width: 30%; height: auto;" />
+</BlocoAnimado>
 
 
-  <HeroHeader
-    titulo="Oceano Invisível"
-    linhaFina="Como os microplásticos estão tomando conta dos nossos mares — e por que isso importa"
-    videoDesk="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-    videoMob="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-    posterDesk="https://s3.glbimg.com/v1/AUTH_8b29beb0cbe247a296f902be2fe084b6/2025/html/especiais/plastico/mapas/capa-desk.jpg"
-    posterMob="https://s3.glbimg.com/v1/AUTH_8b29beb0cbe247a296f902be2fe084b6/2025/html/especiais/plastico/mapas/capa-mob.jpg"
-    autoplay={true}
-    muted={true}
-    loop={true}
-    animacao="fade"
-    position="center center"
-    corTitulo="#ffffff"
-    corLinhaFina="#f4e7c4"
-    tamanhoTitulo="4rem"
-    tamanhoLinhaFina="1.4rem"
+<TextoNumerado
+  numero="MANSÃO BOAZ"
+  texto="A mansão dos Boaz é ambientada na região carioca da Barra da Tijuca na trama, mas a locação escolhida para as gravações com o núcleo, porém, fica no Alto da Boa Vista. Trata-se de um casarão colonial cercado de Mata Atlântica, em um terreno de aproximadamente 35 mil metros quadrados. Na cena do casamento de Abel (Tony Ramos) e Filipa (Cláudia Abreu), em um flashback, cerca de 230 pessoas trabalharam no set ao longo dos dois dias de gravação da cerimônia."
+  alinhamento="right"
+  alinhamentoTexto="left"
+  tamanhoNumeroDesk="2rem"
+  tamanhoTextoDesk="1.1rem"
+  tamanhoNumeroMob="1rem"
+  tamanhoTextoMob="0.9rem"
+  animacao={{
+    desk: {
+      from: { x: 0, y: 0, scale: 1, opacity: 0 },
+      to: { x: 300, y: 0, scale: 1, opacity: 1, duration: 2, ease: 'power3.out' }
+    },
+    mob: {
+      from: { x: 0, y: 0, opacity: 0 },
+      to: { x: 60, y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+    }
+  }}
+/> 
+
+  </Section>
+  <Section fundo="#fead00" padding="6rem 0">
+    <StoryTitulo
+    texto="CRÉDITOS"
+    linhaFina=""
+    largura="40%"
+    alinhamento="center"
+    vertical="top"
+    cor="#6b6b6c"
+    peso="100"
+    tamanhoDesktop="4rem"
+    tamanhoMobile="3rem"
+    lineHeightDesktop="1.1"
+    lineHeightMobile="1.05"
+    corLinhaFina="#6b6b6c"
+    tamanhoLinhaFinaDesktop="1.2rem"
+    tamanhoLinhaFinaMobile="1.6rem"
+    lineHeightLinhaFinaDesktop="2"
+    lineHeightLinhaFinaMobile="1.3"
+    exibirLinha={true}
+    corLinha="#6b6b6c"
+    larguraLinha="100px"
+    alturaLinha="3px"
   />
+  <Creditos
+  corFundo="#fead00"
+  corTextoGeral="#6b6b6c"
+  corFuncao="#003659"
+  corNome="#003659"
+  creditos={[
+    { funcao: "Conteúdo", nome: "Renata Domingues" },
+    { funcao: "Design", nome: "Juan Silva" },
+    { funcao: "Desenvolvimento", nome: "Guilherme Gomes" },
+    { funcao: "Coordenação", nome: "Davi Padovani e Guilherme Gomes" }
+  ]}
+
+/>
+
+</Section>

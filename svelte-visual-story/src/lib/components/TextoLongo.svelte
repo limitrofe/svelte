@@ -7,6 +7,8 @@
   export let animar = false;
   export let tamanhoFonte = "1.2rem";
   export let entrelinha = "1.7";
+  export let fundo = "transparent"; // NOVO
+  export let cor = "var(--cor-preta)";
 </script>
 
 <style>
@@ -60,6 +62,8 @@
       --tamanho-fonte: {tamanhoFonte};
       --entrelinha: {entrelinha};
       text-align: {alinhamento};
+      background-color: {fundo};
+      color: {cor};
     "
     in:fade={{ duration: 500 }}
   >
@@ -73,6 +77,8 @@
       --tamanho-fonte: {tamanhoFonte};
       --entrelinha: {entrelinha};
       text-align: {alinhamento};
+      background-color: {fundo};
+            color: {cor};
     "
   >
     {@html texto}

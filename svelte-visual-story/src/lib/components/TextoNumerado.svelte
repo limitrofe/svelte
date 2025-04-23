@@ -122,17 +122,21 @@
 
   @media (max-width: 768px) {
     .conteudo-animado {
-      flex-direction: row;
-      max-width: 90vw;
-    }
-
-    .numero {
-      width: auto;
-      margin-right: 16px;
-    }
-
-    .texto {
-      width: auto;
-    }
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 90vw;
+    gap: 0.5rem;
   }
+
+  .numero {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .texto {
+    width: 100%;
+  }
+}
+
+
 </style>
